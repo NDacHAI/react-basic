@@ -58,13 +58,16 @@ body {
       display: flex;
       flex-direction: column;
       gap: 30px;
+      user-select: none;
 
       .title-1 {
         font-size: 48px;
+
       }
 
       .title-2 {
         font-size: 25px;
+
       }
 
       .title-3 {
