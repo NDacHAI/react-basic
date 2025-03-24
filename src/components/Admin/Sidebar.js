@@ -14,6 +14,7 @@ import sidebarBg from '../../assets/bg2.jpg';
 
 import { DiReact } from "react-icons/di"
 import { MdDashboard } from "react-icons/md"
+import { Link } from 'react-router-dom';
 
 import './Sidebar.scss'
 
@@ -38,10 +39,15 @@ const Sidebar = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
                         whiteSpace: 'nowrap',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
                     }}
                 >
-                    <DiReact size={'3em'} color={'00bfff'} />
-                    QUIZ
+                    <Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <DiReact size={'3em'} color={'00bfff'} />
+                        QUIZ
+                    </Link>
                 </div>
             </SidebarHeader>
 
@@ -51,6 +57,7 @@ const Sidebar = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
                         icon={<FaTachometerAlt />}
                     >
                         dashboard
+                        <Link to='/admin' />
                     </MenuItem>
                 </Menu>
                 <Menu iconShape="circle">
@@ -58,9 +65,18 @@ const Sidebar = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
                         icon={<FaGem />}
                         title='Features'
                     >
-                        <MenuItem>Quản lý Users</MenuItem>
-                        <MenuItem>Quản lý Bài Quiz</MenuItem>
-                        <MenuItem>Quản lý Câu Hỏi</MenuItem>
+                        <MenuItem>
+                            Quản lý Users
+                            <Link to='/admin/manage-users' />
+                        </MenuItem>
+                        <MenuItem>
+                            Quản lý Bài Quiz
+                            <Link to='/admin/manage-users' />
+                        </MenuItem>
+                        <MenuItem>
+                            Quản lý Câu Hỏi
+                            <Link to='/admin/manage-users' />
+                        </MenuItem>
                     </SubMenu>
                 </Menu>
             </SidebarContent>

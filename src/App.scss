@@ -10,6 +10,15 @@ body {
 .app-container {
   .header-container {
 
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+      max-width: 90%;
+    }
+
     .btn-login {
       height: 40px;
       border: none;

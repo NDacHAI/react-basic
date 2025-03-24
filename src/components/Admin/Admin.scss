@@ -4,7 +4,19 @@
     .admin-sidebar {
         .pro-sidebar {
             height: 100vh;
-            /* Sidebar full chiều cao */
+        }
+    }
+
+    .admin-content {
+        width: 100%;
+
+        .admin-header {
+            height: 40px;
+        }
+
+        .admin-main {
+            border: 1px solid #333;
+
         }
     }
 }
