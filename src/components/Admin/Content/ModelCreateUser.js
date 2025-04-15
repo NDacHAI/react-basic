@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 
-const ModelCreateUser = ({ show, setShow }) => {
+const ModelCreateUser = ({ show, setShow, fetchUsers }) => {
 
     const handleClose = () => {
         setShow(false)
@@ -43,21 +43,19 @@ const ModelCreateUser = ({ show, setShow }) => {
         }
         const data = await postCreateNewUser(email, password, userName, role, image)
 
-        if (data.EM) {
-            toast.error(data.EM);
-            return;
-        }
-
-        if (!password && !isValidEmail) {
-            toast.error(data.EM);
-            return;
-        }
-
-
         if (data && data.EC === 0) {
             toast.success(data.EM);
             handleClose()
+            await fetchUsers()
         }
+
+
+        if (data && data.EC !== 0) {
+            toast.error(data.EM);
+            return;
+        }
+
+
 
 
     }
